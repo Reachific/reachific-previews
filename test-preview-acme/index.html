@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ACME Plumbing — Free Website Preview by Reachific</title>
+<style>*{box-sizing:border-box;} html,body{margin:0;padding:0;width:100%;overflow-x:hidden;}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;600;700;800&family=Lato:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@700;800&family=Nunito+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -58,7 +59,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 
 </head>
 <body>
-<div id="rwl-preview-banner" style="background:#10161c;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong>ACME Plumbing</strong> by Reachific · <a href="https://reachific.com/claim-website?b=ACME+Plumbing&p=test-preview-acme&cid=TEST123&company_name=ACME+Plumbing&full_name=Brandon+Test&phone=%28888%29+619-7988&email=test%40example.com" style="color:#9fe3b9;font-weight:700;text-decoration:none;">Claim it free for 14 days →</a></div>
+<div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong>ACME Plumbing</strong> by Reachific · <a href="https://reachific.com/claim-website?b=ACME+Plumbing&p=test-preview-acme&cid=TEST123&company_name=ACME+Plumbing&full_name=Brandon+Test&phone=%28888%29+619-7988&email=test%40example.com" style="color:#00BFFF;font-weight:700;text-decoration:none;">Claim it free for 14 days →</a></div>
 <div class="rwl" id="rwl-nav-root">
 <style>
 #rwl-nav{position:sticky;top:0;z-index:900;background:#fff;border-bottom:1px solid rgba(20,30,40,.08);}
@@ -359,5 +360,23 @@ window.rwlSetYear = function(){var y=document.getElementById('rwl-year');if(y){y
 window.rwlSetYear();
 </script>
 </div>
+<a id="rwl-chat-bubble" href="https://reachific.com/claim-website?b=ACME+Plumbing&p=test-preview-acme&cid=TEST123&company_name=ACME+Plumbing&full_name=Brandon+Test&phone=%28888%29+619-7988&email=test%40example.com#rf-open-chat" aria-label="Questions?"><span class="rwl-chat-label">Questions?</span><span class="rwl-chat-emoji">💬</span></a>
+<style>
+#rwl-chat-bubble{position:fixed;bottom:20px;right:20px;z-index:9999;background:#00BFFF;color:#fff;text-decoration:none;font-family:'Inter','Lato',sans-serif;font-weight:700;font-size:15px;padding:13px 20px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25);display:inline-flex;align-items:center;gap:8px;opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease, box-shadow .18s ease;}
+#rwl-chat-bubble.rwl-chat-show{opacity:1;transform:translateY(0);}
+#rwl-chat-bubble:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.32);}
+@media(max-width:600px){
+  #rwl-chat-bubble{padding:11px 13px;font-size:20px;bottom:16px;right:16px;gap:0;}
+  #rwl-chat-bubble .rwl-chat-label{display:none;}
+}
+</style>
+<script>
+(function(){
+  function show(){var b=document.getElementById('rwl-chat-bubble');if(b)b.classList.add('rwl-chat-show');}
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(show,1500);});
+  } else { setTimeout(show,1500); }
+})();
+</script>
 </body>
 </html>
