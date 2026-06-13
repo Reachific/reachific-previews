@@ -59,7 +59,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 
 </head>
 <body>
-<div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong style="color:#FEEA3A;">Tequila Sunrise Pools</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com" style="color:#00BFFF;font-weight:700;text-decoration:none;">Claim it free for 14 days →</a> · <span id="rwl-countdown" data-exp="1781652022000" style="color:#FF4B3E;font-weight:700;">Offer expires in <span id="rwl-countdown-time" style="color:#FF4B3E;font-family:'SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;font-weight:700;"></span></span></div><script>
+<style>.rwl-claim-link{color:#00BFFF;text-decoration:underline;font-weight:bold;cursor:pointer;}.rwl-claim-link:hover{color:#FEEA3A;text-decoration:underline;}</style><div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong style="color:#FEEA3A;">Tequila Sunrise Pools</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com" class="rwl-claim-link">Claim it free for 14 days →</a> · <span id="rwl-countdown" data-exp="1781652971000" style="color:#FFFFFF;">Offer expires in <span id="rwl-countdown-time" style="color:#FF4B3E;font-family:'SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;font-weight:700;"></span></span></div><script>
 (function(){
   var el = document.getElementById('rwl-countdown');
   if(!el) return;
@@ -71,7 +71,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
     var diff = exp - Date.now();
     if(diff <= 0){
       el.textContent = 'Offer ending soon';
-      el.style.color = '#FEEA3A';
+      el.style.color = '#FF4B3E';
       if(timer) clearInterval(timer);
       return;
     }
