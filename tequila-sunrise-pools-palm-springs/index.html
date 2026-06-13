@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="arch-hospitality">
+<html class="arch-trade">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,15 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;600;700;800&family=Lato:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@700;800&family=Nunito+Sans:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <script>
 (function(){
-  var a = ("hospitality" || "").trim().toLowerCase();
+  var a = ("trade" || "").trim().toLowerCase();
   if (["trade","wellness","authority","tech","hospitality"].indexOf(a) === -1) a = "trade";
   document.documentElement.classList.add("arch-" + a);
 })();
 </script>
 <style>
 :root{
-  --rwl-primary: #7A2E1E;
-  --rwl-secondary: #E0B25C;
+  --rwl-primary: #0B5394;
+  --rwl-secondary: #E8741E;
   --rwl-primary-dark: color-mix(in srgb, var(--rwl-primary) 78%, #000);
   --rwl-primary-deep: color-mix(in srgb, var(--rwl-primary) 55%, #000);
   --rwl-primary-tint: color-mix(in srgb, var(--rwl-primary) 14%, #fff);
@@ -59,7 +59,31 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 
 </head>
 <body>
-<div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong>Tequila Sunrise Pools</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com" style="color:#00BFFF;font-weight:700;text-decoration:none;">Claim it free for 14 days →</a></div>
+<div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong>Tequila Sunrise Pools</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com" style="color:#00BFFF;font-weight:700;text-decoration:none;">Claim it free for 14 days →</a> · <span id="rwl-countdown" data-exp="1781650740000">Offer expires in <span id="rwl-countdown-time" style="color:#FEEA3A;font-family:'SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;font-weight:700;"></span></span></div><script>
+(function(){
+  var el = document.getElementById('rwl-countdown');
+  if(!el) return;
+  var exp = parseInt(el.getAttribute('data-exp'), 10);
+  var timeEl = document.getElementById('rwl-countdown-time');
+  function pad(n){return (n<10?'0':'')+n;}
+  var timer;
+  function tick(){
+    var diff = exp - Date.now();
+    if(diff <= 0){
+      el.textContent = 'Offer ending soon';
+      el.style.color = '#FEEA3A';
+      if(timer) clearInterval(timer);
+      return;
+    }
+    var h = Math.floor(diff/3600000);
+    var m = Math.floor((diff%3600000)/60000);
+    var s = Math.floor((diff%60000)/1000);
+    timeEl.textContent = pad(h)+':'+pad(m)+':'+pad(s);
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
 <div class="rwl" id="rwl-nav-root">
 <style>
 #rwl-nav{position:sticky;top:0;z-index:900;background:#fff;border-bottom:1px solid rgba(20,30,40,.08);}
@@ -72,7 +96,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 </style>
 <nav id="rwl-nav">
   <div class="rwl-wrap">
-    <a href="#" aria-label="Tequila Sunrise Pools"><img src="https://placehold.co/300x90/7A2E1E/ffffff?text=Tequila%20Sunrise%20Pools" alt="Tequila Sunrise Pools logo"></a>
+    <a href="#" aria-label="Tequila Sunrise Pools"><img src="https://placehold.co/300x90/0B5394/ffffff?text=Tequila%20Sunrise%20Pools" alt="Tequila Sunrise Pools logo"></a>
     <div class="rwl-nav-right">
       <a class="rwl-nav-phone" href="tel:17604802563">17604802563</a>
       <a class="rwl-btn rwl-btn-primary" href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get a Free Quote</a>
@@ -82,7 +106,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 </div>
 <div class="rwl">
 <style>
-#rwl-hero{position:relative;background-image:linear-gradient(100deg, color-mix(in srgb, var(--rwl-primary-deep) 92%, transparent) 18%, color-mix(in srgb, var(--rwl-primary-deep) 45%, transparent) 70%),url('https://images.pexels.com/photos/11757136/pexels-photo-11757136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');background-size:cover;background-position:center;color:#fff;}
+#rwl-hero{position:relative;background-image:linear-gradient(100deg, color-mix(in srgb, var(--rwl-primary-deep) 92%, transparent) 18%, color-mix(in srgb, var(--rwl-primary-deep) 45%, transparent) 70%),url('https://images.pexels.com/photos/16708212/pexels-photo-16708212.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');background-size:cover;background-position:center;color:#fff;}
 #rwl-hero .rwl-wrap{padding-top:110px;padding-bottom:110px;max-width:1180px;}
 #rwl-hero .rwl-hero-inner{max-width:640px;}
 #rwl-hero .rwl-eyebrow{color:#fff;background:color-mix(in srgb, var(--rwl-secondary) 85%, transparent);padding:7px 14px;border-radius:4px;}
@@ -97,9 +121,9 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 <section id="rwl-hero">
   <div class="rwl-wrap">
     <div class="rwl-hero-inner">
-      <span class="rwl-eyebrow">Palm Springs' Trusted Pool Specialists</span>
-      <h1>Your Desert Oasis Deserves Expert Care</h1>
-      <p class="rwl-hero-sub">Tequila Sunrise Pools keeps Palm Springs pools clean, balanced, and resort-ready all year long.</p>
+      <span class="rwl-eyebrow">Palm Springs' Trusted Pool Professionals</span>
+      <h1>Clean Water, Zero Hassle — Every Single Week</h1>
+      <p class="rwl-hero-sub">Tequila Sunrise Pools keeps Palm Springs pools swim-ready year-round with expert maintenance, fast repairs, and honest pricing.</p>
       <div class="rwl-hero-ctas">
         <a class="rwl-btn rwl-btn-primary" href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get a Free Quote</a>
         <a class="rwl-btn rwl-btn-ghost" href="tel:17604802563">Call 17604802563</a>
@@ -149,10 +173,10 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
       <p>From first call to final walkthrough, every job gets the same standard: done right, on time, no surprises.</p>
     </div>
     <div class="rwl-svc-grid">
-      <div class="rwl-svc rwl-lift"><h3>Weekly Pool Maintenance</h3><p>Scheduled cleaning, chemical balancing, and equipment checks keep your water crystal clear and safe without you lifting a finger.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
-      <div class="rwl-svc rwl-lift"><h3>Equipment Repair & Replacement</h3><p>Pumps, filters, heaters, and automation systems diagnosed and repaired fast so your pool never misses a beat in the desert heat.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
-      <div class="rwl-svc rwl-lift"><h3>Pool Opening & Closing</h3><p>Full seasonal start-up and shut-down service that protects your investment and ensures your pool is swim-ready when you need it.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
-      <div class="rwl-svc rwl-lift"><h3>Water Chemistry Correction</h3><p>Algae blooms, cloudy water, and scaling caused by Palm Springs' hard water corrected quickly with professional-grade treatments.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift"><h3>Weekly Pool Maintenance</h3><p>Scheduled cleaning, chemical balancing, and equipment checks that keep your water crystal clear no matter how hot it gets.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift"><h3>Leak Detection & Repair</h3><p>Advanced diagnostics to find leaks other companies miss — and we fix them the same day to protect your investment.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift"><h3>Equipment Repair & Replacement</h3><p>Pumps, heaters, filters, and more — we diagnose fast, source the right parts, and restore peak performance.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift"><h3>Emergency Service</h3><p>Pool problems don't follow business hours. We respond to urgent calls including holidays so your pool is never out of commission for long.</p><a href="https://reachific.com/claim-website?b=Tequila+Sunrise+Pools&p=tequila-sunrise-pools-palm-springs&cid=dWzo66DkAsSsqd9gp1fM&company_name=Tequila+Sunrise+Pools&full_name=&phone=17604802563&email=hello%40tequilasunrisepools.com">Get Started →</a></div>
     </div>
   </div>
 </section>
@@ -173,11 +197,11 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 </style>
 <section id="rwl-about" class="rwl-section">
   <div class="rwl-wrap">
-    <div class="rwl-about-img"><img src="https://images.pexels.com/photos/3856088/pexels-photo-3856088.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="About Tequila Sunrise Pools"></div>
+    <div class="rwl-about-img"><img src="https://images.pexels.com/photos/8985448/pexels-photo-8985448.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="About Tequila Sunrise Pools"></div>
     <div>
       <span class="rwl-eyebrow">Why Choose Tequila Sunrise Pools</span>
       <h2>Local. Accountable. <span class="rwl-accent">Proven.</span></h2>
-      <p class="rwl-about-blurb">Tequila Sunrise Pools was built for the Coachella Valley's unique demands — scorching summers, hard water, and owners who expect their pool to look stunning every single day. We deliver reliable, detail-oriented service that turns your backyard into the retreat you paid for.</p>
+      <p class="rwl-about-blurb">Tequila Sunrise Pools was built for the demands of the desert. Palm Springs heat is unforgiving on equipment and water chemistry — we know it, and we stay ahead of it. From routine weekly service to same-day leak detection and equipment replacement, our techs show up on time, explain what they find, and fix it right the first time.</p>
       <ul>
         <li>CA Lic #C53-1098472</li>
         <li>Upfront, honest pricing</li>
@@ -212,12 +236,12 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
       <p>Don't just take our word for it — a proven track record you can count on.</p>
     </div>
     <div class="rwl-rev-grid">
-      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
-      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
-      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
-      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
-      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
-      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Their tech found a leak two other companies missed and fixed it the same day — saved us thousands."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">David R.</span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Tequila Sunrise had our green pool crystal clear in two visits. Professional and on time every week."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Maria G.</span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Showed up on a holiday weekend when our heater failed — total lifesavers."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Andre W.</span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Replaced our old pump and rebalanced everything — the pool has never run better."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Tom S.</span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Fair pricing and they actually explain what they are doing. Highly recommend."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Priya K.</span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Reliable weekly service and the water always looks perfect even in the Palm Springs heat."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Jennifer P.</span><span class="rwl-verified">✓ Verified Review</span></div></div>
     </div>
     <div class="rwl-rev-cta">
       <p>Happy with your experience? We'd love to hear from you.</p>
@@ -237,7 +261,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 <section id="rwl-more">
   <div class="rwl-wrap">
     <h3>Also Ask Us About</h3>
-    <div class="rwl-chip-row" id="rwl-chip-row" data-services="Tile cleaning, acid washing, variable-speed pump upgrades, pool light repair, salt system installation"></div>
+    <div class="rwl-chip-row" id="rwl-chip-row" data-services="Water testing, algae treatment, pool openings, chemical delivery, filter cleaning"></div>
   </div>
 </section>
 <script>
@@ -283,7 +307,7 @@ window.rwlRenderChips();
 <section id="rwl-cta">
   <div class="rwl-wrap">
     <span class="rwl-eyebrow" style="color:#fff;">Ready When You Are</span>
-    <h2 id="rwl-final-cta">Ready for a Pool You Can Be Proud Of?</h2>
+    <h2 id="rwl-final-cta">Ready for a Pool That Actually Runs Right?</h2>
     <p class="rwl-cta-sub">No commitment, no pressure — tell us what you need and we'll get right back to you with a free quote.</p>
     <div class="rwl-cta-btns">
       <a class="rwl-btn rwl-btn-ghost" href="tel:17604802563">Call 17604802563</a>
@@ -336,7 +360,7 @@ window.rwlRenderChips();
   <div class="rwl-wrap">
     <div>
       <h4>Tequila Sunrise Pools</h4>
-      <p>Tequila Sunrise Pools was built for the Coachella Valley's unique demands — scorching summers, hard water, and owners who expect their pool to look stunning every single day. We deliver reliable, detail-oriented service that turns your backyard into the retreat you paid for.</p>
+      <p>Tequila Sunrise Pools was built for the demands of the desert. Palm Springs heat is unforgiving on equipment and water chemistry — we know it, and we stay ahead of it. From routine weekly service to same-day leak detection and equipment replacement, our techs show up on time, explain what they find, and fix it right the first time.</p>
       <p style="margin-top:10px;">CA Lic #C53-1098472</p>
     </div>
     <div>
