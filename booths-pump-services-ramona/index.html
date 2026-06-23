@@ -59,7 +59,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 
 </head>
 <body>
-<style>.rwl-claim-link{color:#00BFFF;text-decoration:underline;font-weight:bold;cursor:pointer;}.rwl-claim-link:hover{color:#FEEA3A;text-decoration:underline;}</style><div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong style="color:#FEEA3A;">Booth's Pump Services</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=" class="rwl-claim-link">Claim it free for 14 days →</a> · <span id="rwl-countdown" data-exp="1782499947000" style="color:#FFFFFF;">Offer expires in <span id="rwl-countdown-time" style="color:#FF4B3E;font-family:'SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;font-weight:700;"></span></span></div><script>
+<style>.rwl-claim-link{color:#00BFFF;text-decoration:underline;font-weight:bold;cursor:pointer;}.rwl-claim-link:hover{color:#FEEA3A;text-decoration:underline;}</style><div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong style="color:#FEEA3A;">Booth's Pump Services</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=" class="rwl-claim-link">Claim it free for 14 days →</a> · <span id="rwl-countdown" data-exp="1782511560000" style="color:#FFFFFF;">Offer expires in <span id="rwl-countdown-time" style="color:#FF4B3E;font-family:'SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;font-weight:700;"></span></span></div><script>
 (function(){
   var el = document.getElementById('rwl-countdown');
   if(!el) return;
@@ -397,15 +397,29 @@ window.rwlSetYear = function(){var y=document.getElementById('rwl-year');if(y){y
 window.rwlSetYear();
 </script>
 
-<!-- ===== REACHIFIC COLLAPSE ENGINE (hide-empty-and-recenter) ===== -->
+<!-- ===== REACHIFIC COLLAPSE ENGINE v2 (hide-empty-and-recenter + grid cols) ===== -->
 <script>
 (function(){
   function clean(t){ return (t||"").replace(/[\u201C\u201D\u2018\u2019"']/g,"").replace(/\{\{[^}]*\}\}/g,"").trim(); }
   function isEmpty(t){ var c=clean(t).toLowerCase(); return c===""||c==="0"||c==="null"||c==="undefined"; }
   function rm(el){ if(el&&el.parentNode){ el.parentNode.removeChild(el); } }
   function $(s,ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(s)); }
+  function revCols(n){ if(n<=1) return 1; if(n===2) return 2; if(n===3) return 3; if(n===4) return 2; return 3; }
+  function injectGridCSS(){
+    if(document.getElementById('rwl-rev-grid-css')) return;
+    var s=document.createElement('style'); s.id='rwl-rev-grid-css';
+    s.textContent='#rwl-reviews .rwl-rev-grid{display:grid !important;justify-content:center;gap:22px;}'
+      +'#rwl-reviews .rwl-rev{flex:none !important;width:auto !important;}'
+      +'#rwl-reviews .rwl-rev-grid.rwl-cols-1{grid-template-columns:minmax(0,360px);}'
+      +'#rwl-reviews .rwl-rev-grid.rwl-cols-2{grid-template-columns:repeat(2,minmax(0,336px));}'
+      +'#rwl-reviews .rwl-rev-grid.rwl-cols-3{grid-template-columns:repeat(3,minmax(0,336px));}'
+      +'@media(max-width:920px){#rwl-reviews .rwl-rev-grid{grid-template-columns:minmax(0,420px) !important;}}';
+    document.head.appendChild(s);
+  }
 
   window.rwlCollapse = function(){
+    injectGridCSS();
+
     // METRICS: drop empty/zero blocks, keep at most 4 (Service Area is the guaranteed anchor).
     var kept=[];
     $('#rwl-metrics .rwl-metric').forEach(function(m){
@@ -421,12 +435,15 @@ window.rwlSetYear();
       if(!n || isEmpty(n.textContent)) rm(c);
     });
 
-    // TESTIMONIALS: drop empty cards; hide the whole band if none remain.
+    // TESTIMONIALS: drop empty cards; set grid column count (4 -> 2x2); hide band if none.
     $('#rwl-reviews .rwl-rev').forEach(function(c){
       var q=c.querySelector('p');
       if(!q || isEmpty(q.textContent)) rm(c);
     });
-    if($('#rwl-reviews .rwl-rev').length===0){ var rb=document.getElementById('rwl-reviews'); if(rb) rb.style.display='none'; }
+    var revN=$('#rwl-reviews .rwl-rev').length;
+    var grid=document.querySelector('#rwl-reviews .rwl-rev-grid');
+    if(revN===0){ var rb=document.getElementById('rwl-reviews'); if(rb) rb.style.display='none'; }
+    else if(grid){ grid.classList.remove('rwl-cols-1','rwl-cols-2','rwl-cols-3'); grid.classList.add('rwl-cols-'+revCols(revN)); }
 
     // LICENSE fallback: show "Licensed & Insured" wherever the license # is blank.
     $('.rwl-lic').forEach(function(el){ if(isEmpty(el.textContent)) el.textContent='Licensed & Insured'; });
