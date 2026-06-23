@@ -59,7 +59,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 
 </head>
 <body>
-<style>.rwl-claim-link{color:#00BFFF;text-decoration:underline;font-weight:bold;cursor:pointer;}.rwl-claim-link:hover{color:#FEEA3A;text-decoration:underline;}</style><div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong style="color:#FEEA3A;">Booth's Pump Services</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=" class="rwl-claim-link">Claim it free for 14 days →</a> · <span id="rwl-countdown" data-exp="1782075304000" style="color:#FFFFFF;">Offer expires in <span id="rwl-countdown-time" style="color:#FF4B3E;font-family:'SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;font-weight:700;"></span></span></div><script>
+<style>.rwl-claim-link{color:#00BFFF;text-decoration:underline;font-weight:bold;cursor:pointer;}.rwl-claim-link:hover{color:#FEEA3A;text-decoration:underline;}</style><div id="rwl-preview-banner" style="background:#191919;color:#fff;text-align:center;padding:11px 16px;font-family:'Inter','Lato',sans-serif;font-size:13.5px;line-height:1.5;">Free website preview built for <strong style="color:#FEEA3A;">Booth's Pump Services</strong> by Reachific · <a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=" class="rwl-claim-link">Claim it free for 14 days →</a> · <span id="rwl-countdown" data-exp="1782499436000" style="color:#FFFFFF;">Offer expires in <span id="rwl-countdown-time" style="color:#FF4B3E;font-family:'SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;font-weight:700;"></span></span></div><script>
 (function(){
   var el = document.getElementById('rwl-countdown');
   if(!el) return;
@@ -137,9 +137,9 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
         <a class="rwl-btn rwl-btn-ghost" href="tel:+17607899147">Call (760) 789-9147</a>
       </div>
       <div class="rwl-hero-trust">
-        <span class="rwl-chip"><span class="rwl-stars">★★★★★</span> 4.5 · 8 reviews</span>
-        <span class="rwl-chip"></span>
-        <span class="rwl-chip">Serving </span>
+        <span class="rwl-chip" id="rwl-chip-rating" data-rating="4.5"><span class="rwl-stars">★★★★★</span> 4.5 · 8 reviews</span>
+        <span class="rwl-chip rwl-lic"></span>
+        <span class="rwl-chip" id="rwl-chip-serving" data-area="">Serving </span>
       </div>
     </div>
   </div>
@@ -148,17 +148,22 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 <div class="rwl">
 <style>
 #rwl-metrics{background:var(--rwl-primary-dark);color:#fff;padding:46px 0;}
-#rwl-metrics .rwl-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center;}
+#rwl-metrics .rwl-wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 64px;text-align:center;}
+#rwl-metrics .rwl-metric{min-width:130px;}
+#rwl-metrics .rwl-metric-text{min-width:150px;}
 #rwl-metrics .rwl-num{font-family:var(--rwl-font-head);font-weight:800;font-size:40px;color:#fff;}
+#rwl-metrics .rwl-metric-text .rwl-num{font-size:22px;line-height:1.3;padding-top:9px;}
 #rwl-metrics .rwl-num small{font-size:20px;color:var(--rwl-secondary);}
 #rwl-metrics .rwl-lbl{margin-top:6px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);}
-@media(max-width:768px){#rwl-metrics .rwl-wrap{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){#rwl-metrics .rwl-wrap{gap:28px 38px;}}
 </style>
 <section id="rwl-metrics">
   <div class="rwl-wrap">
-    <div><div class="rwl-num">33</div><div class="rwl-lbl">Years in Business</div></div>
-    <div><div class="rwl-num">4.5<small> ★</small></div><div class="rwl-lbl">Average Rating</div></div>
-    <div><div class="rwl-num">8</div><div class="rwl-lbl">Customer Reviews</div></div>
+    <div class="rwl-metric"><div class="rwl-num"><span class="rwl-mval">33</span></div><div class="rwl-lbl">Years in Business</div></div>
+    <div class="rwl-metric"><div class="rwl-num"><span class="rwl-mval">4.5</span><small> ★</small></div><div class="rwl-lbl">Average Rating</div></div>
+    <div class="rwl-metric"><div class="rwl-num"><span class="rwl-mval">8</span></div><div class="rwl-lbl">Customer Reviews</div></div>
+    <div class="rwl-metric rwl-metric-text"><div class="rwl-num"><span class="rwl-mval"></span></div><div class="rwl-lbl">Service Area</div></div>
+    <div class="rwl-metric"><div class="rwl-num"><span class="rwl-mval"></span></div><div class="rwl-lbl">Projects Completed</div></div>
   </div>
 </section>
 </div>
@@ -180,10 +185,10 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
       <p>From first call to final walkthrough, every job gets the same standard: done right, on time, no surprises.</p>
     </div>
     <div class="rwl-svc-grid">
-      <div class="rwl-svc rwl-lift"><h3>Submersible Well Pump Installation & Repair</h3><p>We install, replace, and repair submersible well pumps for residential and agricultural properties throughout Ramona and San Diego County. Whether your pump has failed or you need a new system, we get your water running reliably.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
-      <div class="rwl-svc rwl-lift"><h3>Booster Pump Systems</h3><p>Low water pressure costing you? We design and install booster pump systems that deliver consistent pressure throughout your home or property, using top-rated equipment from leading manufacturers.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
-      <div class="rwl-svc rwl-lift"><h3>Storage Tank Installation</h3><p>Protect your water supply with a properly sized and installed storage tank. We handle full installation and can integrate tanks into your existing pump system for seamless operation.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
-      <div class="rwl-svc rwl-lift"><h3>Backflow Prevention</h3><p>City-required or property-specific, our certified technicians install and inspect backflow prevention devices to keep your water supply clean and compliant with local regulations.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift rwl-svc-card"><h3 class="rwl-svc-name">Submersible Well Pump Installation & Repair</h3><p>We install, replace, and repair submersible well pumps for residential and agricultural properties throughout Ramona and San Diego County. Whether your pump has failed or you need a new system, we get your water running reliably.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift rwl-svc-card"><h3 class="rwl-svc-name">Booster Pump Systems</h3><p>Low water pressure costing you? We design and install booster pump systems that deliver consistent pressure throughout your home or property, using top-rated equipment from leading manufacturers.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift rwl-svc-card"><h3 class="rwl-svc-name">Storage Tank Installation</h3><p>Protect your water supply with a properly sized and installed storage tank. We handle full installation and can integrate tanks into your existing pump system for seamless operation.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
+      <div class="rwl-svc rwl-lift rwl-svc-card"><h3 class="rwl-svc-name">Backflow Prevention</h3><p>City-required or property-specific, our certified technicians install and inspect backflow prevention devices to keep your water supply clean and compliant with local regulations.</p><a href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=">Get Started →</a></div>
     </div>
   </div>
 </section>
@@ -210,7 +215,7 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
       <h2>Local. Accountable. <span class="rwl-accent">Proven.</span></h2>
       <p class="rwl-about-blurb">Booth's Pump Services is a family-owned and operated business based in Ramona, CA, serving the region's rural and agricultural property owners since 1992. Licensed and AWWA-certified, our team handles submersible pump installation, booster systems, storage tanks, windmills, and backflow prevention — using trusted brands like Grundfos, Franklin, and Flint & Walling. When your water supply is on the line, Ramona counts on Booth's.</p>
       <ul>
-        <li></li>
+        <li class="rwl-lic"></li>
         <li>Upfront, honest pricing</li>
         <li>On-time arrival, every time</li>
         <li>Satisfaction guaranteed</li>
@@ -225,15 +230,15 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 #rwl-reviews{background:linear-gradient(180deg, var(--rwl-primary-dark), var(--rwl-primary-deep));color:#fff;}
 #rwl-reviews .rwl-sec-head h2{color:#fff;}
 #rwl-reviews .rwl-sec-head p{color:rgba(255,255,255,.78);}
-#rwl-reviews .rwl-rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-#rwl-reviews .rwl-rev{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;}
+#rwl-reviews .rwl-rev-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;}
+#rwl-reviews .rwl-rev{flex:0 1 336px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:28px 26px;display:flex;flex-direction:column;}
 #rwl-reviews .rwl-rev p{margin-top:14px;font-size:15px;color:rgba(255,255,255,.92);flex:1;}
 #rwl-reviews .rwl-rev-foot{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
 #rwl-reviews .rwl-rev-name{font-family:var(--rwl-font-head);font-weight:700;font-size:14.5px;}
 #rwl-reviews .rwl-verified{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#9fe3b9;font-weight:700;}
-#rwl-reviews .rwl-rev-cta{text-align:center;margin-top:46px;}
+#rwl-reviews .rwl-rev-cta{text-align:center;margin-top:46px;width:100%;}
 #rwl-reviews .rwl-rev-cta p{color:rgba(255,255,255,.8);margin-bottom:18px;font-size:16px;}
-@media(max-width:920px){#rwl-reviews .rwl-rev-grid{grid-template-columns:1fr;}}
+@media(max-width:920px){#rwl-reviews .rwl-rev{flex-basis:100%;}}
 </style>
 <section id="rwl-reviews" class="rwl-section">
   <div class="rwl-wrap">
@@ -247,6 +252,8 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
       <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Been around forever and always have done a great job for me."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Reviewer via BusinessYab</span><span class="rwl-verified">✓ Verified Review</span></div></div>
       <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"Best service, best price, great people! Pump is running smoothly. Straight up, no bull."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Reviewer via Birdeye</span><span class="rwl-verified">✓ Verified Review</span></div></div>
       <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>"I had a new well pump and a booster pump installed. Very reasonable prices and responsive. Good people."</p><div class="rwl-rev-foot"><span class="rwl-rev-name">Reviewer via Birdeye</span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
+      <div class="rwl-rev rwl-lift"><span class="rwl-stars">★★★★★</span><p>""</p><div class="rwl-rev-foot"><span class="rwl-rev-name"></span><span class="rwl-verified">✓ Verified Review</span></div></div>
     </div>
     <div class="rwl-rev-cta">
       <p>Happy with your experience? We'd love to hear from you.</p>
@@ -273,7 +280,8 @@ html.arch-tech      {--rwl-font-head:'Inter',sans-serif;             --rwl-font-
 window.rwlRenderChips = function(){
   var row = document.getElementById('rwl-chip-row');
   if(!row) return;
-  var items = (row.getAttribute('data-services')||'').split(',');
+  var raw = (row.getAttribute('data-services')||'').replace(/\{\{[^}]*\}\}/g,'');
+  var items = raw.split(',');
   row.innerHTML = items.filter(function(s){return s.trim().length;}).map(function(s){
     return '<span class="rwl-chip-item">'+s.trim()+'</span>';
   }).join('');
@@ -317,7 +325,7 @@ window.rwlRenderChips();
     <div class="rwl-cta-btns">
       <a class="rwl-btn rwl-btn-ghost" href="tel:+17607899147">Call (760) 789-9147</a>
     </div>
-    <p class="rwl-cta-note">Free estimates ·  · </p>
+    <p class="rwl-cta-note" id="rwl-cta-note" data-fe="Free estimates" data-lic="" data-hours="">Free estimates ·  · </p>
   </div>
 </section>
 </div>
@@ -366,14 +374,14 @@ window.rwlRenderChips();
     <div>
       <h4>Booth's Pump Services</h4>
       <p>Booth's Pump Services is a family-owned and operated business based in Ramona, CA, serving the region's rural and agricultural property owners since 1992. Licensed and AWWA-certified, our team handles submersible pump installation, booster systems, storage tanks, windmills, and backflow prevention — using trusted brands like Grundfos, Franklin, and Flint & Walling. When your water supply is on the line, Ramona counts on Booth's.</p>
-      <p style="margin-top:10px;"></p>
+      <p class="rwl-lic" style="margin-top:10px;"></p>
     </div>
     <div>
       <h4>Contact</h4>
       <ul>
         <li><a href="tel:+17607899147">(760) 789-9147</a></li>
         <li><a href="mailto:"></a></li>
-        <li></li>
+        <li class="rwl-hide-empty"></li>
       </ul>
     </div>
     <div>
@@ -387,6 +395,68 @@ window.rwlRenderChips();
 <script>
 window.rwlSetYear = function(){var y=document.getElementById('rwl-year');if(y){y.textContent=new Date().getFullYear();}};
 window.rwlSetYear();
+</script>
+
+<!-- ===== REACHIFIC COLLAPSE ENGINE (hide-empty-and-recenter) ===== -->
+<script>
+(function(){
+  function clean(t){ return (t||"").replace(/[\u201C\u201D\u2018\u2019"']/g,"").replace(/\{\{[^}]*\}\}/g,"").trim(); }
+  function isEmpty(t){ var c=clean(t).toLowerCase(); return c===""||c==="0"||c==="null"||c==="undefined"; }
+  function rm(el){ if(el&&el.parentNode){ el.parentNode.removeChild(el); } }
+  function $(s,ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(s)); }
+
+  window.rwlCollapse = function(){
+    // METRICS: drop empty/zero blocks, keep at most 4 (Service Area is the guaranteed anchor).
+    var kept=[];
+    $('#rwl-metrics .rwl-metric').forEach(function(m){
+      var v=m.querySelector('.rwl-mval');
+      if(!v || isEmpty(v.textContent)){ rm(m); } else { kept.push(m); }
+    });
+    kept.slice(4).forEach(rm);
+    if(kept.length===0){ var mb=document.getElementById('rwl-metrics'); if(mb) mb.style.display='none'; }
+
+    // SERVICE CARDS: drop any with an empty name.
+    $('#rwl-services .rwl-svc-card').forEach(function(c){
+      var n=c.querySelector('.rwl-svc-name');
+      if(!n || isEmpty(n.textContent)) rm(c);
+    });
+
+    // TESTIMONIALS: drop empty cards; hide the whole band if none remain.
+    $('#rwl-reviews .rwl-rev').forEach(function(c){
+      var q=c.querySelector('p');
+      if(!q || isEmpty(q.textContent)) rm(c);
+    });
+    if($('#rwl-reviews .rwl-rev').length===0){ var rb=document.getElementById('rwl-reviews'); if(rb) rb.style.display='none'; }
+
+    // LICENSE fallback: show "Licensed & Insured" wherever the license # is blank.
+    $('.rwl-lic').forEach(function(el){ if(isEmpty(el.textContent)) el.textContent='Licensed & Insured'; });
+
+    // GENERIC: remove any element flagged rwl-hide-empty when it is blank.
+    $('.rwl-hide-empty').forEach(function(el){ if(isEmpty(el.textContent)) rm(el); });
+
+    // HERO chips: drop the rating chip with no rating; drop the serving chip with no area.
+    var rc=document.getElementById('rwl-chip-rating'); if(rc && isEmpty(rc.getAttribute('data-rating'))) rm(rc);
+    var sc=document.getElementById('rwl-chip-serving'); if(sc && isEmpty(sc.getAttribute('data-area'))) rm(sc);
+
+    // CTA note: rebuild from non-empty parts so there are no dangling separators.
+    var note=document.getElementById('rwl-cta-note');
+    if(note){
+      var parts=[];
+      var fe=clean(note.getAttribute('data-fe')); if(fe) parts.push(fe);
+      var lic=clean(note.getAttribute('data-lic')); parts.push(lic?lic:'Licensed & Insured');
+      var hrs=clean(note.getAttribute('data-hours')); if(hrs) parts.push(hrs);
+      note.textContent=parts.join(' · ');
+    }
+
+    // "Also Ask Us About": hide if no secondary-service chips rendered.
+    var chipRow=document.getElementById('rwl-chip-row');
+    if(chipRow && chipRow.children.length===0){ var more=document.getElementById('rwl-more'); if(more) more.style.display='none'; }
+  };
+
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', window.rwlCollapse); }
+  else { window.rwlCollapse(); }
+  setTimeout(window.rwlCollapse, 400); // safety re-run; idempotent
+})();
 </script>
 </div>
 <a id="rwl-chat-bubble" href="https://reachific.com/claim-website?b=Booth%27s+Pump+Services&p=booths-pump-services-ramona&cid=4yXSwOKYjqigFBlmfkMq&company_name=Booth%27s+Pump+Services&full_name=&phone=%2B17607899147&email=#rf-open-chat" aria-label="Questions?"><span class="rwl-chat-label">Questions?</span><span class="rwl-chat-emoji">💬</span></a>
